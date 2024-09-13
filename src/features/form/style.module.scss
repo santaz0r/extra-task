@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    padding: 16px;
+    background-color: lightcyan;
+    border-radius: 16px;
+    height: 600px;
+    width: 50vw;
+    color: #000;
+    transform: translateX(16px);
+  }
+
+  &__img {
+    background-image: url('./assets/whitecat.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 50vw;
+    border-radius: 0 16px 16px 0;
+  }
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn_submit,
+.btn_reset {
+  background-color: #000;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 45%;
+  &:disabled {
+    background-color: unset;
+    border: 1px solid gray;
+    opacity: 0.5;
+    cursor: auto;
+  }
+}

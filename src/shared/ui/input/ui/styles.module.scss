@@ -1,0 +1,57 @@
+.input {
+  text-align: left;
+  position: relative;
+
+  & .length {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 12px;
+    line-height: 110%;
+    font-style: italic;
+  }
+
+  & .label {
+    &::after {
+      content: '*';
+      position: absolute;
+      top: -3px;
+      color: red;
+    }
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 8px;
+    &:focus-within {
+      background-color: rgba(0, 128, 0, 0.185);
+    }
+  }
+
+  input {
+    height: 36px;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  textarea {
+    resize: none;
+    height: 144px;
+    overflow-y: auto;
+  }
+
+  & .error {
+    min-height: 24px;
+    margin: 0;
+    text-align: left;
+    font-size: 12px;
+    color: red;
+  }
+}
