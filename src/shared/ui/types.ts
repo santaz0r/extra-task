@@ -4,8 +4,8 @@ type InputTypes = {
   field: string;
   errors?: string;
   placeholder?: string;
-  value: string;
-  maxLength: number;
+  value?: string;
+  maxLength?: number;
 };
 
 type SelectTypes = {

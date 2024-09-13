@@ -46,8 +46,6 @@ export const Form = () => {
           placeholder="Введите телефон"
           errors={errors.phone?.message}
           {...register('phone')}
-          value={watch('phone')}
-          maxLength={11}
         />
         <Select
           label="Тема обращения"
