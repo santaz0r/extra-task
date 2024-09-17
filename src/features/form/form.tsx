@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import styles from './style.module.scss';
 import { Input } from '../../shared/ui/input';
 import { Select } from '../../shared/ui/select';
-import { themeOptions } from '../../shared/ui/select/select-options';
+import { themeOptions } from './select-options';
 import { validationSchema } from '../../shared/ui/validSchema';
 import { AppealFormData } from '../../shared/ui/types';
 
@@ -18,7 +18,7 @@ export const Form = () => {
     handleSubmit,
     reset,
     register,
-    watch,
+    getValues,
     formState: { errors, isValid },
   } = methods;
 
@@ -36,7 +36,7 @@ export const Form = () => {
           placeholder="Введите ФИО..."
           errors={errors.username?.message}
           {...register('username')}
-          value={watch('username')}
+          value={getValues('username')}
           maxLength={100}
         />
         <Input
@@ -47,6 +47,16 @@ export const Form = () => {
           errors={errors.phone?.message}
           {...register('phone')}
         />
+
+        <Input
+          label="Телефон"
+          field="phone"
+          type="tel"
+          placeholder="Введите телефон"
+          errors={errors.phone?.message}
+          {...register('phone')}
+        />
+
         <Select
           label="Тема обращения"
           field="theme"
@@ -62,7 +72,7 @@ export const Form = () => {
           placeholder="Текст обращения"
           errors={errors.text?.message}
           {...register('text')}
-          value={watch('text')}
+          value={getValues('text')}
           maxLength={250}
         />
 

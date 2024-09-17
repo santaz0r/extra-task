@@ -3,7 +3,7 @@ import { forwardRef } from 'react';
 import styles from './styles.module.scss';
 import { SelectTypes } from '../../types';
 
-const SelectInput = forwardRef<HTMLSelectElement, SelectTypes>(
+export const Select = forwardRef<HTMLSelectElement, SelectTypes>(
   ({ label, field, options, errors, ...inputProps }, ref) => {
     return (
       <div className={styles.input}>
@@ -22,10 +22,8 @@ const SelectInput = forwardRef<HTMLSelectElement, SelectTypes>(
             ))}
         </select>
 
-        <p>{errors && errors}</p>
+        <p>{errors}</p>
       </div>
     );
   }
 );
-
-export default SelectInput;
