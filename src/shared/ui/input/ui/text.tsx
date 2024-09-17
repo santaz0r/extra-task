@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import { InputTypes } from '../../types';
-import { IMaskInput } from 'react-imask';
+import { InputMask } from 'react-tiny-mask';
 
 import styles from './styles.module.scss';
 
@@ -19,7 +19,7 @@ const Text = forwardRef<HTMLInputElement, InputTypes>(
         )}
 
         {type === 'tel' ? (
-          <IMaskInput mask="+7 (000) 000-00-00" {...inputProps} inputRef={ref} />
+          <InputMask mask="+7 (###) ###-##-##" ref={ref} {...inputProps} />
         ) : (
           <input type={type} id={field} {...inputProps} ref={ref} />
         )}
