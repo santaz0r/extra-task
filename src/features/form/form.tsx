@@ -48,15 +48,6 @@ export const Form = () => {
           {...register('phone')}
         />
 
-        <Input
-          label="Телефон"
-          field="phone"
-          type="tel"
-          placeholder="Введите телефон"
-          errors={errors.phone?.message}
-          {...register('phone')}
-        />
-
         <Select
           label="Тема обращения"
           field="theme"
