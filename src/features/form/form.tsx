@@ -51,7 +51,6 @@ export const Form = () => {
         <Select
           label="Тема обращения"
           field="theme"
-          type="select"
           options={themeOptions}
           errors={errors.theme?.message}
           {...register('theme')}

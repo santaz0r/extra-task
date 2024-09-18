@@ -1,5 +1,5 @@
 type InputTypes = {
-  type?: 'tel' | 'text' | 'textarea';
+  type: 'tel' | 'text' | 'textarea';
   label: string;
   field: string;
   errors?: string;
@@ -9,19 +9,11 @@ type InputTypes = {
 };
 
 type SelectTypes = {
-  type?: 'select';
   label: string;
   field: string;
   options: { label: string; value: string }[];
   errors?: string;
-  placeholder?: string;
 };
-
-// type InputTypes = {
-//   type: 'text' | 'number' | 'textarea';
-//   field: string;
-//   label: string;
-// } & InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>;
 
 type AppealFormData = {
   username: string;
@@ -30,6 +22,4 @@ type AppealFormData = {
   theme: string;
 };
 
-type Test = React.HTMLAttributes<HTMLInputElement>;
-
-export type { InputTypes, Test, AppealFormData, SelectTypes };
+export type { InputTypes, AppealFormData, SelectTypes };
