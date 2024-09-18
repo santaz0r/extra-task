@@ -5,7 +5,7 @@ import { InputMask } from 'react-tiny-mask';
 import styles from './styles.module.scss';
 
 const Text = forwardRef<HTMLInputElement, InputTypes>(
-  ({ type, label, field, errors, value = '', maxLength, ...inputProps }, ref) => {
+  ({ type, label, field, errors, value = '', maxLength = 100, ...inputProps }, ref) => {
     return (
       <div className={styles.input}>
         <label className={styles.label} htmlFor={field}>
@@ -13,7 +13,7 @@ const Text = forwardRef<HTMLInputElement, InputTypes>(
         </label>
 
         {type !== 'tel' && (
-          <div className={styles.length}>
+          <div className={`${styles.length} ${value.length > maxLength ? styles.max_char_error : ''}`}>
             {value?.length ?? 0} / {maxLength}
           </div>
         )}

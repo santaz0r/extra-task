@@ -18,7 +18,7 @@ export const Form = () => {
     handleSubmit,
     reset,
     register,
-    getValues,
+    watch,
     formState: { errors, isValid },
   } = methods;
 
@@ -36,7 +36,7 @@ export const Form = () => {
           placeholder="Введите ФИО..."
           errors={errors.username?.message}
           {...register('username')}
-          value={getValues('username')}
+          value={watch('username')}
           maxLength={100}
         />
         <Input
@@ -62,7 +62,7 @@ export const Form = () => {
           placeholder="Текст обращения"
           errors={errors.text?.message}
           {...register('text')}
-          value={getValues('text')}
+          value={watch('text')}
           maxLength={250}
         />
 
