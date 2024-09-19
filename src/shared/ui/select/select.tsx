@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 
 import styles from './styles.module.scss';
-import { SelectTypes } from '../../types';
+import { SelectTypes } from '../types';
 
 export const Select = forwardRef<HTMLSelectElement, SelectTypes>(
   ({ label, field, options, errors, ...inputProps }, ref) => {
@@ -22,7 +22,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectTypes>(
             ))}
         </select>
 
-        <p>{errors}</p>
+        <p className={styles.error}>{errors}</p>
       </div>
     );
   }

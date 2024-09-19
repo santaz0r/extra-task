@@ -24,6 +24,8 @@ export const Form = () => {
 
   const hasError = Boolean(Object.keys(errors).length);
   const onSubmit = (data: AppealFormData) => console.log(data);
+  const fields = watch();
+  const areAllFieldsEmpty = Object.values(fields).every((value) => !value);
 
   return (
     <article className={styles.form}>
@@ -70,7 +72,7 @@ export const Form = () => {
           <button className={styles.btn_submit} type="submit" disabled={!isValid || hasError}>
             Отправить
           </button>
-          <button className={styles.btn_reset} onClick={() => reset()} type="button">
+          <button className={styles.btn_reset} onClick={() => reset()} type="button" disabled={areAllFieldsEmpty}>
             Сбросить поля
           </button>
         </div>
